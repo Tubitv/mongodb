@@ -144,7 +144,7 @@ defmodule Mongo do
     child_opts
     |> Map.new()
     |> Map.merge(%{
-      id: __MODULE__,
+      id: child_opts[:id] || __MODULE__,
       start: {__MODULE__, :start_link, [opts]}
     })
   end
